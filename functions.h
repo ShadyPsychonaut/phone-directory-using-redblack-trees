@@ -1,3 +1,12 @@
+#ifndef FUNCTIONS_H_INCLUDED
+#define FUNCTIONS_H_INCLUDED
+
+typedef enum
+{
+    F,
+    T
+} boolean;
+
 enum COLOR
 {
     RED,
@@ -31,11 +40,7 @@ struct RBNode *right_rotation(struct RBNode *tree, struct RBNode *node_to_rotate
 // Operations
 void create_RBTree(struct RBNode *);
 struct RBNode *create_node(int);
-struct RBNode *insertNode(struct RBNode *, struct RBNode *);
-struct RBNode *insertFixUp(struct RBNode *tree, struct RBNode *node_to_fix);
 struct RBNode *nodeHavingValue(struct RBNode *tree, int);
-struct RBNode *deleteNode(struct RBNode *tree, struct RBNode *node_to_delete);
-struct RBNode *deleteFixUp(struct RBNode *tree, struct RBNode *node_to_fix);
 void inOrderTraverseTree(struct RBNode *);
-struct RBNode *minValue(struct RBNode *);
-struct RBNode *inOrderSuccessorOf(struct RBNode *tree, struct RBNode *node_i);
+
+#endif
