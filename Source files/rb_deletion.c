@@ -40,7 +40,9 @@ struct RBNode *deleteNode(struct RBNode *tree, struct RBNode *node_to_delete)
     {
         if (node_to_delete == tree)
         {
-            node_to_delete->key = inOrderSuccessor->key;
+            node_to_delete->contactName = inOrderSuccessor->contactName;
+            node_to_delete->contactNo = inOrderSuccessor->contactNo;
+            node_to_delete->email = inOrderSuccessor->email;
             node_to_delete->left = NULL;
             node_to_delete->right = NULL;
             tree = deleteNode(tree, inOrderSuccessor);

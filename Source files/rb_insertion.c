@@ -1,15 +1,42 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <malloc.h>
 #include "functions.h"
+
+struct RBNode *create_node(char *name, char *no, char *mailid)
+{
+    struct RBNode *new_node;
+    new_node = (struct RBNode *)malloc(sizeof(struct RBNode));
+
+    new_node->contactName = malloc(strlen(name) + 1); // +1 to store null
+    strcpy(new_node->contactName, name);
+    new_node->contactNo = malloc(strlen(no) + 1);
+    strcpy(new_node->contactNo, no);
+    new_node->email = malloc(strlen(mailid) + 1);
+    strcpy(new_node->email, mailid);
+
+    new_node->node_color = RED;
+    new_node->parent = NULL;
+    new_node->left = NULL;
+    new_node->right = NULL;
+
+    printf("Node created");
+
+    return new_node;
+}
 
 struct RBNode *insertNode(struct RBNode *tree, struct RBNode *new_node)
 {
     struct RBNode *ptr, *focus;
+    int val;
     ptr = tree;
     focus = NULL;
     while (ptr != NULL)
     {
         focus = ptr;
-        if (new_node->key < ptr->key)
+        val = strcmp(new_node->contactName, ptr->contactName);
+        if (val < 0)
             ptr = ptr->left;
         else
             ptr = ptr->right;
@@ -19,7 +46,7 @@ struct RBNode *insertNode(struct RBNode *tree, struct RBNode *new_node)
 
     if (focus == NULL)
         tree = new_node;
-    else if (new_node->key < focus->key)
+    else if (strcmp(new_node->contactName, focus->contactName) < 0)
         focus->left = new_node;
     else
         focus->right = new_node;

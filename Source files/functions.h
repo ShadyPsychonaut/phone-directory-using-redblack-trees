@@ -15,7 +15,10 @@ enum COLOR
 
 struct RBNode
 {
-    int key;
+    char *contactName;
+    char *contactNo;
+    char *email;
+
     enum COLOR node_color;
     struct RBNode *parent;
     struct RBNode *left;
@@ -37,10 +40,10 @@ struct RBNode *right_rotation(struct RBNode *tree, struct RBNode *node_to_rotate
 
 // Operations
 void create_RBTree(struct RBNode *);
-struct RBNode *create_node(int);
+struct RBNode *create_node(char *, char *, char *);
 struct RBNode *insertNode(struct RBNode *, struct RBNode *);
 struct RBNode *insertFixUp(struct RBNode *tree, struct RBNode *node_to_fix);
-struct RBNode *nodeHavingValue(struct RBNode *tree, int);
+struct RBNode *nodeHavingValue(struct RBNode *tree, char *);
 void swapValues(struct RBNode *, struct RBNode *);
 void swapColors(struct RBNode *, struct RBNode *);
 struct RBNode *BSTReplace(struct RBNode *node);

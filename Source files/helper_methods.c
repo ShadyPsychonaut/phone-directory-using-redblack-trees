@@ -1,12 +1,22 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 #include "functions.h"
 
 void swapValues(struct RBNode *u, struct RBNode *v)
 {
-    int temp;
-    temp = u->key;
-    u->key = v->key;
-    v->key = temp;
+    char *temp;
+    temp = u->contactName;
+    u->contactName = v->contactName;
+    v->contactName = temp;
+
+    temp = u->contactNo;
+    u->contactNo = v->contactNo;
+    v->contactNo = temp;
+
+    temp = u->email;
+    u->email = v->email;
+    v->email = temp;
 }
 
 void swapColors(struct RBNode *u, struct RBNode *v)
@@ -17,7 +27,7 @@ void swapColors(struct RBNode *u, struct RBNode *v)
     v->node_color = temp;
 }
 
-struct RBNode *nodeHavingValue(struct RBNode *tree, int val)
+struct RBNode *nodeHavingValue(struct RBNode *tree, char *search)
 {
     struct RBNode *curr;
     if (tree == NULL)
@@ -26,10 +36,10 @@ struct RBNode *nodeHavingValue(struct RBNode *tree, int val)
         return NULL;
     }
     curr = tree;
-    if (curr->key == val)
+    if (strcmp(curr->contactName, search) == 0)
         return curr;
-    while (curr != NULL && val != curr->key)
-        curr = (val < curr->key) ? curr->left : curr->right;
+    while (curr != NULL && strcmp(search, curr->contactName) != 0)
+        curr = (strcmp(search, curr->contactName) < 0) ? curr->left : curr->right;
     if (curr == NULL)
     {
         printf("Not found");
