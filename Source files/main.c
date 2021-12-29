@@ -9,8 +9,6 @@
 // Root declaration
 struct RBNode *tree;
 
-void display(struct RBNode *);
-
 int main()
 {
     int opt;
@@ -34,6 +32,7 @@ int main()
         {
         case 1:
             create_RBTree(tree);
+            printf("\nNew Phone directory created!");
             break;
         case 2:
             printf("\nProcessing...");
@@ -66,6 +65,11 @@ int main()
             delete = nodeHavingValue(tree, val);
             tree = deleteNode(tree, delete);
             break;
+        case 6:
+            printf("\nExiting...");
+            break;
+        default:
+            printf("\nInvalid entry");
         }
     } while (opt != 6);
 }
@@ -89,7 +93,10 @@ void inOrderTraverseTree(struct RBNode *root)
 
 void display(struct RBNode *node_to_display)
 {
-    printf("\nContact Name: %s", node_to_display->contactName);
-    printf("\nContact No: %s", node_to_display->contactNo);
-    printf("\nContact email: %s", node_to_display->email);
+    if (node_to_display != NULL)
+    {
+        printf("\nContact Name: %s", node_to_display->contactName);
+        printf("\nContact No: %s", node_to_display->contactNo);
+        printf("\nContact email: %s", node_to_display->email);
+    }
 }

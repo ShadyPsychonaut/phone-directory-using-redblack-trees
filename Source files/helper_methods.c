@@ -38,7 +38,7 @@ struct RBNode *nodeHavingValue(struct RBNode *tree, char *search)
     curr = tree;
     if (strcmp(curr->contactName, search) == 0)
         return curr;
-    while (curr != NULL && strcmp(search, curr->contactName) != 0)
+    while (curr != NULL && strcmp(search, curr->contactName) != 0 && strcmp(search, curr->contactNo) != 0)
         curr = (strcmp(search, curr->contactName) < 0) ? curr->left : curr->right;
     if (curr == NULL)
     {

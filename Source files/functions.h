@@ -52,5 +52,6 @@ struct RBNode *inOrderSuccessorOf(struct RBNode *node_i);
 struct RBNode *deleteNode(struct RBNode *tree, struct RBNode *node_to_delete);
 struct RBNode *deleteFixUp(struct RBNode *tree, struct RBNode *node_to_fix);
 void inOrderTraverseTree(struct RBNode *);
+void display(struct RBNode *);
 
 #endif
