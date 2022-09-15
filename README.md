@@ -1,4 +1,4 @@
-# Phone-directory using red-black trees
+# Phone-directory using Red-black trees
 In this project, we have worked upon developing an optimized Phone Directory using a kind of self-balancing Binary Search Tree, called Red-black trees. Searching, Inserting and Deleting contacts(nodes) in the directory takes logarithmic time (log N).
 
 ## Definition of RB Trees
@@ -6,6 +6,7 @@ A red-black tree is a kind of self-balancing binary search tree where each node 
 More about them can be read here: 
 https://en.wikipedia.org/wiki/Red%E2%80%93black_tree \
 https://www.geeksforgeeks.org/red-black-tree-set-1-introduction-2/
+
 
 Detailed Report of the project can be found here : [dsa_project_report.pdf](https://github.com/ShadyPsychonaut/phone-directory-using-redblack-trees/files/9577314/dsa_project_report.pdf)\
 A Presentation on the working of the project can be found here : [dsa_project_ppt.pdf](https://github.com/ShadyPsychonaut/phone-directory-using-redblack-trees/files/9577322/dsa_project_ppt.pdf)
